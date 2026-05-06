@@ -8,14 +8,16 @@ class Program
         string guess = "0";
         int numberGuessed = 0;
 
-        while (numberGuessed != magicNumber);
+        while (true)
         {
-            Console.WriteLine("What is the magic number? ");
-            guess = Console.ReadLine();
-            numberGuessed = int.Parse(guess);
-            Console.WriteLine($"{numberGuessed}");
-        } 
+           Console.WriteLine("What is the magic number? ");
+           guess = Console.ReadLine();
+           numberGuessed = int.Parse(guess);
 
-        
+           if (numberGuessed == magicNumber)
+            {
+                break;
+            } 
+        }
     }
 }
