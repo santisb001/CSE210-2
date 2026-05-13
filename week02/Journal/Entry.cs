@@ -10,6 +10,7 @@ public class Entry
     public string _inputText = "";
     public string _promptText = "";
     public PromptGenerator _promptGeneratorChoice;
+
     //Constructor
     public Entry()
     {
@@ -18,7 +19,6 @@ public class Entry
         _promptText = _promptGeneratorChoice.ReturnRandomPrompt();
     }
     
-
     //Methods
     public void DisplayEntry()
     {
