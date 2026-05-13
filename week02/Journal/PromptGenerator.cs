@@ -6,7 +6,7 @@ public class PromptGenerator
 {
     //Atributes
     public List<string> _listOfPrompts = new List<string>();
-    public string _file = "PromptsFile.csv";
+    public string _file = "promptsFile.csv";
     //public string[] _prompts = File.ReadAllLines(_file);
     public Random _random = new Random(); 
 

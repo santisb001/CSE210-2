@@ -12,18 +12,19 @@ public class Entry
     public PromptGenerator _promptGeneratorChoice;
 
     //Constructor
-    public Entry()
+    public Entry(PromptGenerator promptGenerator)
     {
         _date = DateTime.Now.ToShortDateString();
-        _promptGeneratorChoice = new PromptGenerator();
+        _promptGeneratorChoice = promptGenerator;
         _promptText = _promptGeneratorChoice.ReturnRandomPrompt();
     }
     
     //Methods
-    public void DisplayEntry()
+    public string DisplayEntry()
     {
         //Show a string with all the info of the entry to the screen
-        Console.WriteLine($"{_date} -- {_promptText}: {_inputText}");
+        //Console.WriteLine($"{_date} -- {_promptText}: {_inputText}");
+        return _date + " -- " + _promptText + ": " + _inputText;
     }
 
 }
