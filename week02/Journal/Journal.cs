@@ -29,11 +29,19 @@ public class Journal
 
         string[] lines = File.ReadAllLines(fileName);
 
-        Entry newEntry = new Entry(_promptGenerator);
-
+        
         foreach (string L in lines)
         {
-            Console.WriteLine(L);
+            string[] parts = L.Split(":");
+
+            string partOne = parts[0];
+            string partTwo = parts[1];
+
+            Entry newEntry = new Entry(_promptGenerator);
+            newEntry._inputText = partTwo;
+
+            _entryList.Add(newEntry);
+        //Console.WriteLine(L);
         }
         
         
@@ -64,7 +72,8 @@ public class Journal
 
         foreach (Entry E in _entryList)
         {
-            E.DisplayEntry();
+            string entryDisplayed = E.DisplayEntry();
+            Console.WriteLine($"{entryDisplayed}");
         }
     }
 
