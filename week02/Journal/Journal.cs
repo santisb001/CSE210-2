@@ -29,16 +29,21 @@ public class Journal
 
         string[] lines = File.ReadAllLines(fileName);
 
+        //Clear the list to avoid duplicating entries
+        _entryList.Clear();
         
         foreach (string L in lines)
         {
-            string[] parts = L.Split(":");
+            string[] parts = L.Split(new string[] { "--", ":" }, StringSplitOptions.None);
 
-            string partOne = parts[0];
-            string partTwo = parts[1];
+            string partOne = parts[0].Trim();
+            string partTwo = parts[1].Trim();
+            string partThree = parts[2].Trim();
 
             Entry newEntry = new Entry(_promptGenerator);
-            newEntry._inputText = partTwo;
+            newEntry._inputText = partThree;
+            newEntry._date = partOne;
+            newEntry._promptText = partTwo;
 
             _entryList.Add(newEntry);
         //Console.WriteLine(L);

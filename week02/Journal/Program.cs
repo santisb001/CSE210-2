@@ -5,6 +5,8 @@ class Program
     static void Main(string[] args)
     {
         //Write the program once you finish the rest
+        Journal mainJournal = new Journal();
+        
         while (true)
         {
             Console.WriteLine("Welcome to the Journal Program!");
@@ -18,7 +20,6 @@ class Program
             Console.WriteLine("What would you like to do?");
             string choice = Console.ReadLine();
 
-            Journal mainJournal = new Journal();
 
             if (choice == "1")
             {
