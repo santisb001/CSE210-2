@@ -6,5 +6,13 @@ using System.Linq;
 
 public class Scripture
 {
-    
+    //Attributes
+
+
+
+    //Constructor
+
+
+
+    //Methods
 }
