@@ -34,13 +34,13 @@ public class Word
         Console.WriteLine($"{_word}");
     }
 
-    public bool IsHidden ()
+    public bool IsHidden()
     {
         //return that it is, in fact, hidden
         return _isHidden = true;
     }
 
-    public string ReturnDisplayText ()
+    public string ReturnDisplayText()
     {
         //return a string
         if (_isHidden == false)
