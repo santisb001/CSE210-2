@@ -16,16 +16,16 @@ public class Word
     public Word (string word)
     {
         _word = word;
-        _hiddenContent = new string ('_', word.Length);
+        _hiddenContent = word;
         _isHidden = false;
         
     }
 
     //Methods
     public void Hide()
-    {
-        //Show the hidden word  
-        Console.WriteLine($"{_hiddenContent}");
+    { 
+        _hiddenContent = new string ('_', _word.Length);
+        _isHidden = true;
     }
 
     public void Show()
@@ -37,7 +37,7 @@ public class Word
     public bool IsHidden()
     {
         //return that it is, in fact, hidden
-        return _isHidden = true;
+        return true;
     }
 
     public string ReturnDisplayText()
