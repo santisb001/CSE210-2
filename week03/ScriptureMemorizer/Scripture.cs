@@ -50,6 +50,7 @@ public class Scripture
             }
             int randInt = _randomNum.Next(0,_indexes.Count);
             int wordIndex = _indexes[randInt];
+
             _words[wordIndex].Hide();
             _indexes.RemoveAt(randInt);   
         }
@@ -63,10 +64,26 @@ public class Scripture
     public string GetDisplayText()
     {
         //return a string of the scripture in it's current state
+        string refVar = _reference.ReturnReference();
+        string display = " ";
+        foreach (Word w in _words )
+        {
+            display += " " + w.GetDisplayText();
+        }
+        return refVar + display.Trim();
+        
     }
 
     public bool IsCompletelyHidden()
     {
-        //Check is a word is hidden or not
-    }
+        //Check if a word is hidden or not
+        foreach (Word w in _words)
+        {
+            if (!w.IsHidden())
+            {
+                return false;
+            }
+        }
+        return true;
+    } 
 }
