@@ -68,7 +68,7 @@ public class Scripture
         string display = " ";
         foreach (Word w in _words )
         {
-            display += " " + w.GetDisplayText();
+            display += " " + w.ReturnDisplayText();
         }
         return refVar + display.Trim();
         
@@ -76,14 +76,7 @@ public class Scripture
 
     public bool IsCompletelyHidden()
     {
-        //Check if a word is hidden or not
-        foreach (Word w in _words)
-        {
-            if (!w.IsHidden())
-            {
-                return false;
-            }
-        }
-        return true;
+        //Check if all word objects are hidden or not
+        return _words.All(w => w.IsHidden());
     } 
 }

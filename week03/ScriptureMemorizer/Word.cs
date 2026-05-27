@@ -31,13 +31,12 @@ public class Word
     public void Show()
     {
         //Show the word
-        Console.WriteLine($"{_word}");
+        _isHidden = false;
     }
 
     public bool IsHidden()
     {
-        //return that it is, in fact, hidden
-        return true;
+        return _isHidden;
     }
 
     public string ReturnDisplayText()
