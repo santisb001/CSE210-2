@@ -11,6 +11,7 @@ class Program
         //bool keepGoing = true;
         Console.WriteLine("Welcome to the Scripture Memorizer program!");
         Random random = new Random();
+        Console.WriteLine(scriptureObj.GetDisplayText());
 
         while (true)
         {
