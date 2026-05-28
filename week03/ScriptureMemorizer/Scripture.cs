@@ -70,7 +70,7 @@ public class Scripture
         {
             display += " " + w.ReturnDisplayText();
         }
-        return refVar + display.Trim();
+        return refVar + ": "+ display.Trim();
         
     }
 

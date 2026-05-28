@@ -11,6 +11,7 @@ class Program
         //bool keepGoing = true;
         Console.WriteLine("Welcome to the Scripture Memorizer program!");
         Random random = new Random();
+        Console.WriteLine(scriptureObj.GetDisplayText());
 
         while (true)
         {
@@ -26,7 +27,7 @@ class Program
             Console.Clear();   
         
             //Hide a random number of words
-            int randInt = random.Next(1,10); 
+            int randInt = random.Next(1,5); 
             scriptureObj.HideRandomWords(randInt);
 
             //Print the current state of the scripture
