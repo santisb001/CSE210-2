@@ -29,11 +29,16 @@ public class Order
     public string ShippingLabel()
     {
         //return a string with the name and address of the customer
+        return _customer.ReturnCustomer();
     }
 
     public void PackingLabel()
     {
         //return a string with the name and ID of each product in the order
+        foreach(Product P in _products)
+        {
+            Console.WriteLine($"{P.ShippingData()}");
+        }
     }
 
 }

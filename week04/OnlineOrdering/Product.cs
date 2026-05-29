@@ -29,5 +29,8 @@ public class Product
         return cost;
     }
 
-    
+    public string ShippingData()
+    {
+        return $"CODE: {_prodID}, PRODUCT: {_prodName}";
+    }
 }
