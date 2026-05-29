@@ -10,10 +10,10 @@ class Program
         video1.AddComment("BravoMacho","I'm terrified of snails");
         
         Video video2 = new Video("Battlfront 2: Campaing, Chapter 5","X1berCrys74l",7201);
-        video3.AddComment("TywinLannnister44","You are kinda bad at this, I beated this lvl 8 years ago, you noob!");
-        video3.AddComment("XxXMinerPro357XxX","Maybe try using more the special habilities, the recond droid can shock the enemies for a littlewhile. Loved the video");
-        video3.AddComment("AnakinLuke71","lol, bro pls use the cover!!");
-        video3.AddComment("Tobias Gutierrez","Si usas la habilidad del blaster pesado, puedes despejar los pasillos sin problemas.");
+        video2.AddComment("TywinLannnister44","You are kinda bad at this, I beated this lvl 8 years ago, you noob!");
+        video2.AddComment("XxXMinerPro357XxX","Maybe try using more the special habilities, the recond droid can shock the enemies for a littlewhile. Loved the video");
+        video2.AddComment("AnakinLuke71","lol, bro pls use the cover!!");
+        video2.AddComment("Tobias Gutierrez","Si usas la habilidad del blaster pesado, puedes despejar los pasillos sin problemas.");
 
         Video video3 = new Video("Why GOT deserved better","Nigth's Watch Sorcerer",3547);
         video3.AddComment("TywinLannnister44","You bunch of %&Q&%@, you ruined my character!!!");
@@ -28,5 +28,25 @@ class Program
         video4.AddComment("AnakinLuke71","POV: When @TobiasGutierrez gives you the perfect villain arc");
         video4.AddComment("Nigth's Watch Sorcerer","Bro @TobiasGutierrez this is your fault...");
         video4.AddComment("Tobias Gutierrez","No es mi culpa por decir la verdad. NO ERES EL VERDADERO TWYN LANNISTER");
+    
+    
+        //List of videos
+        List<Video> videos = new List<Video>();
+        videos.Add(video1);
+        videos.Add(video2);
+        videos.Add(video3);
+        videos.Add(video4);
+    
+        foreach(Video V in videos)
+        {
+            Console.WriteLine(" ");
+            V.DisplayVideoData();
+            int commentQuantity = V.CommentQuantity();
+            Console.WriteLine($"Comments: {commentQuantity}");
+            V.DisplayComments();
+            Console.WriteLine(" ");
+        }
+
+    
     }
 }

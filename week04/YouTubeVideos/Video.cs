@@ -35,6 +35,12 @@ public class Video
         }
     }
 
+    public void DisplayVideoData()
+    {
+        Console.WriteLine("Video data: ");
+        Console.WriteLine($"Title: {_title}, Author: {_author}, Duration: {_duration}s");
+    }
+
     public int CommentQuantity()
     {
         int quantity = _comments.Count();

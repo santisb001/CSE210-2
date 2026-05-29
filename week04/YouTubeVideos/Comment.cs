@@ -19,7 +19,7 @@ public class Comment
     //Methods
     public void DisplayComment()
     {
-        Console.WriteLine($"{_author}: {_text}");
+        Console.WriteLine($"User: {_author}, Text: {_text}");
     }
 
     
