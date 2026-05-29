@@ -22,10 +22,13 @@ public class Customer
         return _address.InTheUS();
     }
 
-    
+    public string ReturnCustomer()
+    {
+        return $"NAME: {_name}, ADDRESS: {_address.MakeAddress()}";
+    }
 
 
 
 
-    
+
 }
