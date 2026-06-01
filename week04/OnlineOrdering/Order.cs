@@ -37,7 +37,7 @@ public class Order
         //return a string with the name and ID of each product in the order
         foreach(Product P in _products)
         {
-            Console.WriteLine($"{P.ShippingData()}");
+            Console.WriteLine($"{P.PackingData()}");
         }
     }
 

@@ -29,7 +29,7 @@ public class Product
         return cost;
     }
 
-    public string ShippingData()
+    public string PackingData()
     {
         return $"CODE: {_prodID}, PRODUCT: {_prodName}";
     }
