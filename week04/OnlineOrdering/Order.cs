@@ -40,7 +40,7 @@ public class Order
 
         foreach(Product P in _products)
         {
-            PackingLabel += P.PackingData() + "\n";
+            label += P.PackingData() + "\n";
         }
 
         return label;

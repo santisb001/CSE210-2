@@ -6,23 +6,25 @@ class Program
     {
         //First Order
         Address firstAddress = new Address("Wallaby Street 42","Sidney","New South Wales","Australia");
-        Customer firstCustomer = new Customer("P. Sherman", firstAddress);
-        Order fisrtOrder = new Order(firstCustomer);
-
         //Make it outside the US
-        fisrtOrder.OusideTheUs();
-        //Add products
-        fisrtOrder.AddProduct("Turbo Fan","Q742RT-y",23,4);
-        fisrtOrder.AddProduct("French Wrenches","P982MK-z",15,10);
-        fisrtOrder.AddProduct("Generator","E556KP-t",70,2);
-        fisrtOrder.AddProduct("Gas pump","F201LJ-u",15,1);
+        firstAddress.OutsideTheUS();
+        
+        Customer firstCustomer = new Customer("P. Sherman", firstAddress);
+        Order firstOrder = new Order(firstCustomer);
 
-        string firstShippingLabel = fisrtOrder.ShippingLabel();
+        
+        //Add products
+        firstOrder.AddProduct("Turbo Fan","Q742RT-y",23,4);
+        firstOrder.AddProduct("French Wrenches","P982MK-z",15,10);
+        firstOrder.AddProduct("Generator","E556KP-t",70,2);
+        firstOrder.AddProduct("Gas pump","F201LJ-u",15,1);
+
+        string firstShippingLabel = firstOrder.ShippingLabel();
         Console.WriteLine("ORDER 1 ");
         Console.WriteLine($"{firstShippingLabel}");
         Console.WriteLine("THIS PACKAGE CONTAINS: ");
-        Console.WriteLine(fisrtOrder.PackingLabel());
-        Console.WriteLine($"Total cost: ${fisrtOrder.CalculateTotalPrice()}");
+        Console.WriteLine(firstOrder.PackingLabel());
+        Console.WriteLine($"Total cost: ${firstOrder.CalculateTotalPrice()}");
 
 
         //Second Order
