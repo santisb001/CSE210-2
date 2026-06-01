@@ -4,48 +4,47 @@ class Program
 {
     static void Main(string[] args)
     {
-        Video video1 = new Video("The ten most fast snails","SnailD0ct0r55",1504);
-        video1.AddComment("AracnidLover67","Spiders are way cooler than snails, a snail would totally lose against any spider");
-        video1.AddComment("XxMaineCraftxX","@AracnidLover67 chill bro, you ain't a spider. Also, snails are delicious!");
-        video1.AddComment("BravoMacho","I'm terrified of snails");
-        
-        Video video2 = new Video("Battlfront 2: Campaing, Chapter 5","X1berCrys74l",7201);
-        video2.AddComment("TywinLannnister44","You are kinda bad at this, I beated this lvl 8 years ago, you noob!");
-        video2.AddComment("XxXMinerPro357XxX","Maybe try using more the special habilities, the recond droid can shock the enemies for a littlewhile. Loved the video");
-        video2.AddComment("AnakinLuke71","lol, bro pls use the cover!!");
-        video2.AddComment("Tobias Gutierrez","Si usas la habilidad del blaster pesado, puedes despejar los pasillos sin problemas.");
+        //First Order
+        Address firstAddress = new Address("Wallaby Street 42","Sidney","New South Wales","Australia");
+        Customer firstCustomer = new Customer("P. Sherman", firstAddress);
+        Order fisrtOrder = new Order(firstCustomer);
 
-        Video video3 = new Video("Why GOT deserved better","Nigth's Watch Sorcerer",3547);
-        video3.AddComment("TywinLannnister44","You bunch of %&Q&%@, you ruined my character!!!");
-        video3.AddComment("TywinLannnister44","nOw Im being censoredd!!!");
-        video3.AddComment("XxXMinerPro357XxX","Loved the analysis, great vid!");
-        video3.AddComment("AnakinLuke71","Imo it wasn't that bad.");
-        video3.AddComment("Tobias Gutierrez","No eres el verdadero Tywin @TywinLannnister44, no siquiera hablas con clase!");
+        //Make it outside the US
+        fisrtOrder.OusideTheUs();
+        //Add products
+        fisrtOrder.AddProduct("Turbo Fan","Q742RT-y",23,4);
+        fisrtOrder.AddProduct("French Wrenches","P982MK-z",15,10);
+        fisrtOrder.AddProduct("Generator","E556KP-t",70,2);
+        fisrtOrder.AddProduct("Gas pump","F201LJ-u",15,1);
+
+        string firstShippingLabel = fisrtOrder.ShippingLabel();
+        Console.WriteLine("ORDER 1 ");
+        Console.WriteLine($"{firstShippingLabel}");
+        Console.WriteLine("THIS PACKAGE CONTAINS: ");
+        Console.WriteLine(fisrtOrder.PackingLabel());
+        Console.WriteLine($"Total cost: ${fisrtOrder.CalculateTotalPrice()}");
+
+
+        //Second Order
+        Address secondAddress = new Address("Forest Park Ave","St. Louis","Missouri","USA");
+        Customer secondCustomer = new Customer("Matias Larroque", secondAddress);
+        Order secondOrder = new Order(secondCustomer);
+        //Add products
+        secondOrder.AddProduct("Peanut butter","MK428P-a",3,25);
+        secondOrder.AddProduct("Butter cream","LQ321O-p",7,39);
+        secondOrder.AddProduct("Wooden spoon","RP112M-r",14,2);
+        secondOrder.AddProduct("Cookies","FN333R-u",2,32);
+
+        string secondShippingLabel = secondOrder.ShippingLabel();
+        Console.WriteLine("ORDER 2 ");
+        Console.WriteLine($"{secondShippingLabel}");
+        Console.WriteLine("THIS PACKAGE CONTAINS: ");
+        Console.WriteLine(secondOrder.PackingLabel());
+        Console.WriteLine($"Total cost: ${secondOrder.CalculateTotalPrice()}");
         
-        Video video4 = new Video("WHY I'M THE GREATEST PERSON TO EVER EXIST, AND WHY YOU SHOULD RESPECT MY INTELIGENCE","TywinLannnister44",21600);
-        video4.AddComment("TywinLannnister44","AMAZING VIDEO");
-        video4.AddComment("XxXMinerPro357XxX","I think you should relax, best wishes");
-        video4.AddComment("AnakinLuke71","POV: When @TobiasGutierrez gives you the perfect villain arc");
-        video4.AddComment("Nigth's Watch Sorcerer","Bro @TobiasGutierrez this is your fault...");
-        video4.AddComment("Tobias Gutierrez","No es mi culpa por decir la verdad. NO ERES EL VERDADERO TWYN LANNISTER");
-    
-    
-        //List of videos
-        List<Video> videos = new List<Video>();
-        videos.Add(video1);
-        videos.Add(video2);
-        videos.Add(video3);
-        videos.Add(video4);
-    
-        foreach(Video V in videos)
-        {
-            Console.WriteLine(" ");
-            V.DisplayVideoData();
-            int commentQuantity = V.CommentQuantity();
-            Console.WriteLine($"Comments: {commentQuantity}");
-            V.DisplayComments();
-            Console.WriteLine(" ");
-        }
+        
+        
+        
 
     
     }

@@ -9,6 +9,7 @@ public class Order
     private List<Product> _products;
     private Customer _customer;
     private bool _inUSA;
+    
 
     //Constructor
     public Order(Customer customer)
@@ -32,13 +33,40 @@ public class Order
         return _customer.ReturnCustomer();
     }
 
-    public void PackingLabel()
+    public string PackingLabel()
     {
         //return a string with the name and ID of each product in the order
+        string label = "";
+
         foreach(Product P in _products)
         {
-            Console.WriteLine($"{P.PackingData()}");
+            PackingLabel += P.PackingData() + "\n";
         }
+
+        return label;
+    }
+
+    public double CalculateTotalPrice()
+    {
+        double totalPrice = 0;
+
+        foreach(Product P in  _products)
+        {
+            totalPrice += P.ProdCost();
+        }
+
+
+        totalPrice += _inUSA ? 5 : 35;
+        //if (_inUSA == false)
+        //{
+        //    _totalPrice += 35;
+        //}
+        //else
+        //{
+        //    _totalPrice += 5;
+        //}
+
+        return totalPrice;
     }
 
 }
