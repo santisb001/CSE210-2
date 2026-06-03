@@ -38,5 +38,4 @@ public class Activity
         return _duration;
     }
 
-
 }
