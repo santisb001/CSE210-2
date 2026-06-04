@@ -8,6 +8,8 @@ public class ReflectionActivity : Activity
     //Attributes
     private List<string> _prompts;
     private List<string> _reflections;
+    private string _reflectionFile;
+    private string _promptsFile;
     Random _random;
 
     //Constructor
@@ -15,6 +17,8 @@ public class ReflectionActivity : Activity
     {
         _prompts = new List<string>();
         _reflections = new List<string>();
+        _reflectionFile = "Reflections.csv";
+        _promptsFile = "ReflectionPrompts.csv";
         _random = new Random();
     }
 
@@ -34,31 +38,37 @@ public class ReflectionActivity : Activity
     public string GetPrompt()
     {
         //Select and return a random prompt
-        ///
-        /// 
-        ///Think of a time when you stood up for someone else.
-        ///Think of a time when you did something really difficult.
-        ///Think of a time when you helped someone in need.
-        ///Think of a time when you did something truly selfless.   
-        /// 
-        /// 
+        if (_prompts.Count == 0)
+        {
+            _prompts = File.ReadAllLines(_promptsFile).ToList();
+        }
+
+        int index = _random.Next(_prompts.Count);
+
+        string chosenPrompt = _prompts[index];
+
+        _prompts.RemoveAt(index);
+
+        return chosenPrompt;
         //return string
     }
 
     public string GetReflection()
     {
         //Select and return a random Reflection
-        ///
-        ///Why was this experience meaningful to you?
-        ///Have you ever done anything like this before?
-        ///How did you get started?
-        ///How did you feel when it was complete?
-        ///What made this time different than other times when you were not as successful?
-        ///What is your favorite thing about this experience?
-        ///What could you learn from this experience that applies to other situations?
-        ///What did you learn about yourself through this experience?
-        ///How can you keep this experience in mind in the future?
-        ///
+        
+        if (_reflections.Count == 0)
+        {
+            _reflections = File.ReadAllLines(_reflectionFile).ToList();
+        }
+
+        int index = _random.Next(_reflections.Count);
+
+        string chosenRef = _reflections[index];
+
+        _reflections.RemoveAt(index);
+
+        return chosenRef;
         //return string
     } 
 }
