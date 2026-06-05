@@ -37,20 +37,31 @@ public class ReflectionActivity : Activity
         string reponse = Console.ReadLine();
         _duration = Convert.ToInt32(reponse);
 
+        //DateTime
+        DateTime startTime = DateTime.Now;
+        DateTime timeSpent = startTime.AddSeconds(_duration);
+        
+        //Clear the console
         Console.Clear();
         Console.WriteLine("Get Ready...\n\n");
+        while (DateTime.Now < startTime.AddSeconds(5))
+        {
+            GetSpinner();
+        }
+        //Show random prompt
         string chosenPrompt = GetPrompt();
         Console.WriteLine(chosenPrompt);
         Console.WriteLine("When you have something in mind, press enter to continue.");
         string answer = Console.ReadLine();
-        //Clear the cosnole
-        Console.Clear();
-        string firstReflection = GetReflection();
-        Console.WriteLine(firstReflection);
-        Thread.Sleep(5000);
-        string secondReflection = GetReflection();
-        Console.WriteLine(secondReflection);
-        Thread.Sleep(5000);
+        
+        
+        
+        while (DateTime.Now < timeSpent)
+        {
+            string reflection = GetReflection();
+            Console.WriteLine(reflection);
+            Thread.Sleep(7000);    
+        }
         
         Console.WriteLine(GetEndMessage());
     }

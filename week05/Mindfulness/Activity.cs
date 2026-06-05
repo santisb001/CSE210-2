@@ -39,5 +39,17 @@ public class Activity
     {
         return _description;
     }
+    public void GetSpinner()
+    {
+        List<string> animationStrings = new List<string>();
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("—");
+        animationStrings.Add("\\");
+        string s = animationStrings[i];
+        Console.Write(s);
+        Thread.Sleep(500);
+        Console.Write("\b \b");
+    }
 
 }
