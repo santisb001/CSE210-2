@@ -35,16 +35,24 @@ public class ReflectionActivity : Activity
         
         Console.WriteLine("How long, in seconds, would you like for your session to be?");
         string reponse = Console.ReadLine();
-        //_duration = Convert.ToInt32(reponse);
+        _duration = Convert.ToInt32(reponse);
 
-
-        ///
-        /// 
-        /// 
-        /// Finish later with the loop
-        /// 
-        /// 
-        /// 
+        Console.Clear();
+        Console.WriteLine("Get Ready...\n\n");
+        string chosenPrompt = GetPrompt();
+        Console.WriteLine(chosenPrompt);
+        Console.WriteLine("When you have something in mind, press enter to continue.");
+        string answer = Console.ReadLine();
+        //Clear the cosnole
+        Console.Clear();
+        string firstReflection = GetReflection();
+        Console.WriteLine(firstReflection);
+        Thread.Sleep(5000);
+        string secondReflection = GetReflection();
+        Console.WriteLine(secondReflection);
+        Thread.Sleep(5000);
+        
+        Console.WriteLine(GetEndMessage());
     }
     
     public string GetPrompt()
@@ -57,7 +65,7 @@ public class ReflectionActivity : Activity
 
         int index = _random.Next(_prompts.Count);
 
-        string chosenPrompt = _prompts[index];
+        string chosenPrompt = $" --- {_prompts[index]} ---\n";
 
         _prompts.RemoveAt(index);
 

@@ -30,9 +30,10 @@ public class BreathingActivity : Activity
         string reponse = Console.ReadLine();
         _duration = Convert.ToInt32(reponse);
         //SetDuration(length);
+        DateTime startTime = DateTime.Now;
+        DateTime timeSpent = startTime.AddSeconds(_duration);
 
-        int timeSpent = 0;
-        while(timeSpent < _duration)
+        while(startTime < timeSpent)
         {
             //Breath in
             Console.WriteLine("Breathe in...");
@@ -51,7 +52,6 @@ public class BreathingActivity : Activity
                 Console.Write("\b \b");
             }
 
-            timeSpent += 11;
         }
 
         Console.WriteLine(GetEndMessage()); 
