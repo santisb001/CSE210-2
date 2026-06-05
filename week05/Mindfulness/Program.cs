@@ -6,22 +6,12 @@ class Program
     {
         //Breathing activity
         BreathingActivity breathingAct = new BreathingActivity("Breathing Activity","This activity will help you relax by walking you through breathing in and out slowly.\nClear your mind and focus on your breathing.");
-        
-        ///     FINISH THIS     ///
+
         //Reflecting activity
-        ReflectingActivity reflectingAct = new ReflectingActivity();
-        ///
-        /// 
-        /// 
-        /// 
-        
-        ///     FINISH THIS     ///
+        ReflectingActivity reflectingAct = new ReflectingActivity("Reflection Activity","This activity will help you reflect on times in your life when you have shown strength and resilience.\nThis will help you recognize the power you have and how you can use it in other aspects of your life.");
+
         //Listing activity
-        ListingActivity listingAct = new ListingActivity();
-        ///
-        /// 
-        /// 
-        /// 
+        ListingActivity listingAct = new ListingActivity("Listing Acitvity","This activity will help you reflect on the good things in your life\nby having you list as many things as you can in a certain area.");
 
         while(true)
         {
@@ -44,7 +34,7 @@ class Program
             {
                 listingAct.Run();
             }
-            else if(chosen == 2)
+            else if(chosen == 4)
             {
                 break;
             }

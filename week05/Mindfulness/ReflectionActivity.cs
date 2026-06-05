@@ -29,12 +29,15 @@ public class ReflectionActivity : Activity
         Console.WriteLine(GetStartMessage());
         Console.WriteLine("");
         
+        //This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.
         Console.WriteLine(GetDescription());
         Console.WriteLine("");
         
         Console.WriteLine("How long, in seconds, would you like for your session to be?");
         string reponse = Console.ReadLine();
-        _duration = Convert.ToInt32(reponse);
+        //_duration = Convert.ToInt32(reponse);
+
+
         ///
         /// 
         /// 
