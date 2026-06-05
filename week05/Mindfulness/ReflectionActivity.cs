@@ -44,7 +44,7 @@ public class ReflectionActivity : Activity
         //Clear the console
         Console.Clear();
         Console.WriteLine("Get Ready...\n\n");
-        while (DateTime.Now < startTime.AddSeconds(5))
+        while (DateTime.Now < startTime.AddSeconds(3))
         {
             GetSpinner();
         }
@@ -54,8 +54,7 @@ public class ReflectionActivity : Activity
         Console.WriteLine("When you have something in mind, press enter to continue.");
         string answer = Console.ReadLine();
         
-        
-        
+        //Reflection loop
         while (DateTime.Now < timeSpent)
         {
             string reflection = GetReflection();
