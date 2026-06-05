@@ -11,7 +11,7 @@ public class ListingActivity : Activity
     private string _promptsFile;
 
     //Constructor
-    public ListingActivity(string start, string end, string description) : base (start,end,description)
+    public ListingActivity(string start, string description) : base (start,description)
     {
         _prompts = new List<string>();
         _count = 0;

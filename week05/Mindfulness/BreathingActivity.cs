@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 public class BreathingActivity : Activity
 {
@@ -9,7 +10,7 @@ public class BreathingActivity : Activity
     //none
 
     //Constructor
-    public BreathingActivity(string start, string end, string description) : base (start,end,description)
+    public BreathingActivity(string start, string description) : base (start,description)
     {
         
     }
@@ -19,20 +20,41 @@ public class BreathingActivity : Activity
     {
         //code the activity
         //This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.
-        Console.WriteLine("Welcome to the Breathing Activity");
+        Console.WriteLine(GetStartMessage());
         Console.WriteLine("");
         
-        Console.WriteLine($"{GetStartMessage()}");
+        Console.WriteLine(GetDescription());
         Console.WriteLine("");
         
         Console.WriteLine("How long, in seconds, would you like for your session to be?");
-        int length = Console.ReadLine();
-        SetDuration(length);
+        string reponse = Console.ReadLine();
+        _duration = Convert.ToInt32(reponse);
+        //SetDuration(length);
 
-        ///
-        /// Finish latter with the loop
-        /// 
-        ///Console.WriteLine($"{GetEndMessage}"); 
+        int timeSpent = 0;
+        while(timeSpent < _duration)
+        {
+            //Breath in
+            Console.WriteLine("Breathe in...");
+            for(int t = 5; t > 0; t--)
+            {
+                Console.Write(t);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
+            //Breath out
+            Console.WriteLine("Breathe out...");
+            for(int t = 6; t > 0; t--)
+            {
+                Console.Write(t);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
+
+            timeSpent += 11;
+        }
+
+        Console.WriteLine(GetEndMessage()); 
 
     }
 }

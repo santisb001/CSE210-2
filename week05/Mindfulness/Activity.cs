@@ -7,15 +7,13 @@ public class Activity
 {
     //Attributes
     private string _startMessage;
-    private string _endMessage;
     private string _description;
-    private int _duration;
+    protected int _duration;
 
     //Constructor
-    public Activity(string start, string end, string description)
+    public Activity(string start, string description)
     {
         _startMessage = start;
-        _endMessage = end;
         _description = description;
         _duration = 0;
     }
@@ -23,11 +21,11 @@ public class Activity
     //Methods
     public string GetStartMessage()
     {
-        return _startMessage;
+        return $"Welcome to the {_startMessage}";
     }
     public string GetEndMessage()
     {
-        return _endMessage;
+        return $"Well Done!!\n\nYou have completed another {_duration} seconds of {_startMessage}";
     }
     public void SetDuration(int seconds)
     {
@@ -36,6 +34,10 @@ public class Activity
     public int GetDuration()
     {
         return _duration;
+    }
+    public string GetDescription()
+    {
+        return _description;
     }
 
 }

@@ -13,7 +13,7 @@ public class ReflectionActivity : Activity
     Random _random;
 
     //Constructor
-    public ReflectionActivity(string start, string end, string description) : base (start,end,description)
+    public ReflectionActivity(string start, string description) : base (start,description)
     {
         _prompts = new List<string>();
         _reflections = new List<string>();
