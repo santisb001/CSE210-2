@@ -46,6 +46,10 @@ public class Activity
         animationStrings.Add("/");
         animationStrings.Add("—");
         animationStrings.Add("\\");
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("—");
+        animationStrings.Add("\\");
         string s = animationStrings[i];
         Console.Write(s);
         Thread.Sleep(500);

@@ -49,8 +49,8 @@ public class ReflectionActivity : Activity
             GetSpinner();
         }
         //Show random prompt
-        string chosenPrompt = GetPrompt();
-        Console.WriteLine(chosenPrompt);
+        Console.WriteLine(GetPrompt());
+        
         Console.WriteLine("When you have something in mind, press enter to continue.");
         string answer = Console.ReadLine();
         

@@ -25,17 +25,42 @@ class Program
             if(chosen == 1)
             {
                 breathingAct.Run();
+                DateTime startTime = DateTime.Now;
+                DateTime timeSpent = startTime.AddSeconds(3);
+
+                while(DateTime.Now < timeSpent)
+                {
+                    breathingAct.GetSpinner();
+                }
             }
             else if(chosen == 2)
             {
                 reflectingAct.Run();
+                DateTime startTime = DateTime.Now;
+                DateTime timeSpent = startTime.AddSeconds(3);
+                while(DateTime.Now < timeSpent)
+                {
+                    breathingAct.GetSpinner();
+                }
             }
             else if(chosen == 3)
             {
                 listingAct.Run();
+                DateTime startTime = DateTime.Now;
+                DateTime timeSpent = startTime.AddSeconds(3);
+                while(DateTime.Now < timeSpent)
+                {
+                    breathingAct.GetSpinner();
+                }
             }
             else if(chosen == 4)
             {
+                DateTime startTime = DateTime.Now;
+                DateTime timeSpent = startTime.AddSeconds(3);
+                while(DateTime.Now < timeSpent)
+                {
+                    breathingAct.GetSpinner();
+                }
                 break;
             }
         }
