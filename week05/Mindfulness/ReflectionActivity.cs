@@ -26,6 +26,15 @@ public class ReflectionActivity : Activity
     public void Run()
     {
         //code the execution of the class
+        Console.WriteLine(GetStartMessage());
+        Console.WriteLine("");
+        
+        Console.WriteLine(GetDescription());
+        Console.WriteLine("");
+        
+        Console.WriteLine("How long, in seconds, would you like for your session to be?");
+        string reponse = Console.ReadLine();
+        _duration = Convert.ToInt32(reponse);
         ///
         /// 
         /// 
