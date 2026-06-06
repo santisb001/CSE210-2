@@ -16,11 +16,12 @@ class Program
         while(true)
         {
             //Menu
+            Console.Clear();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("    1. Start breathing activity \n    2. Start reflecting activity \n    3. Start listing activity \n    4. Quit");
             Console.WriteLine("Select a choice from the menu: ");
             string choice = Console.ReadLine();
-            int chosen = Convert.ToInt32(choice);
+            int chosen = int.Parse(choice);
 
             if(chosen == 1)
             {

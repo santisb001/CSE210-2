@@ -33,7 +33,7 @@ public class BreathingActivity : Activity
         DateTime startTime = DateTime.Now;
         DateTime timeSpent = startTime.AddSeconds(_duration);
 
-        while(startTime < timeSpent)
+        while(DateTime.Now < timeSpent)
         {
             //Breath in
             Console.WriteLine("Breathe in...");
@@ -45,7 +45,7 @@ public class BreathingActivity : Activity
             }
             //Breath out
             Console.WriteLine("Breathe out...");
-            for(int t = 6; t > 0; t--)
+            for(int t = 5; t > 0; t--)
             {
                 Console.Write(t);
                 Thread.Sleep(1000);
