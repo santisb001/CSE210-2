@@ -50,10 +50,12 @@ public class Activity
         animationStrings.Add("/");
         animationStrings.Add("—");
         animationStrings.Add("\\");
-        string s = animationStrings[i];
-        Console.Write(s);
-        Thread.Sleep(500);
-        Console.Write("\b \b");
+        for(int i = 0; i <= animationStrings.Count; i++)
+        {
+            string s = animationStrings[i];
+            Console.Write(s);
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+        }
     }
-
 }

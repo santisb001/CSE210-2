@@ -9,11 +9,15 @@ public class ListingActivity : Activity
     private List<string> _prompts;
     private int _count;
     private string _promptsFile;
+    private List<string> _answers;
+    Random _random;
 
     //Constructor
     public ListingActivity(string start, string description) : base (start,description)
     {
         _prompts = new List<string>();
+        _random = new Random();
+        _answers = new List<string>();
         _count = 0;
         _promptsFile = "ListingPrompts.csv";
     }
@@ -51,13 +55,14 @@ public class ListingActivity : Activity
         Console.WriteLine("List as many responses as you can to the following prompt:");
         Console.WriteLine("You may begin in:");
 
-        ///
-        ///         FINISH THIS         ///
-        ///         FINISH THIS         ///
-        ///         FINISH THIS         ///
-        /// 
+        while(DateTime.Now < timeSpent)
+        {
+            string answer = Console.ReadLine();
+            GetListFromUser(answer);
+            _count++;
+        }
+        Console.WriteLine($"You listed {_count} items!");
 
-    
         Console.WriteLine(GetEndMessage());
     }
 
@@ -80,7 +85,9 @@ public class ListingActivity : Activity
      
     public List<string> GetListFromUser(string answer)
     {
-        answer
+        _answers.Add(answer);
+
+        return _answers;
     /// 
     /// Create a file with the responses of the user, then take that file and
     /// dump it into a List
