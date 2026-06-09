@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 
-public class Rectangle
+public class Rectangle : Shape
 {
     //Attributes
 

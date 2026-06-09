@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 
-public class Circle
+public class Circle : Shape
 {
     //Attributes
 
