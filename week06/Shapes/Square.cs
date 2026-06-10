@@ -16,4 +16,8 @@ public class Square : Shape
     }
 
     //Methods
+    public override double GetArea()
+    {
+        return _side * _side;
+    }
 }
