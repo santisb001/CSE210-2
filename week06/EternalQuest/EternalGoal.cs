@@ -7,8 +7,21 @@ using System.Threading;
 public class EternalGoal : Goal
 {
     //Attributes
+    //none
 
     //Constructor
+    public EternalGoal(string name, string description, string points) : base(name,description,points)
+    {
+        
+    }
 
     //Methods
+    public override void RecordEvent()
+    {
+        //Call the IsComplete() method and record what happened
+    }
+    public override bool IsComplete()
+    {
+        return false;
+    }
 }
