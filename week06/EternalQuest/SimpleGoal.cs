@@ -28,7 +28,7 @@ public class SimpleGoal : Goal
 
     public override string GetDetails()
     {
-        return $"Goal: {_goalName}, {_description}, points earned: {_points}";
+        return $"{_goalName},{_description},{_points}";
     }
 
     //public override string GetStringRepresentation()
