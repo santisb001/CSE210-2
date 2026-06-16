@@ -7,11 +7,11 @@ using System.Threading;
 public class SimpleGoal : Goal
 {
     //Attributes
-    private bool _isComplete;
+    //none
     //Constructor
     public SimpleGoal(string name, string description, int points) : base (name,description,points)
     {
-        _isComplete = false;
+        
     }
 
     //Methods
@@ -19,11 +19,10 @@ public class SimpleGoal : Goal
     {
         //Call the IsComplete() method and record what happened
     }
-
-    public override bool IsComplete()
+    public bool CompleteIt()
     {
-        _isComplete = true;
-        return _isComplete;
+        _complete = true;
+        return _complete;
     }
 
     public override string GetDetails()

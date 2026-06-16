@@ -18,10 +18,7 @@ public class EternalGoal : Goal
     //Methods
     public override void RecordEvent()
     {
-        //Call the IsComplete() method and record what happened
+        
     }
-    public override bool IsComplete()
-    {
-        return false;
-    }
+    
 }

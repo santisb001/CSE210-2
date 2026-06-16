@@ -10,6 +10,7 @@ public abstract class Goal
     protected string _goalName;
     protected string _description;
     protected int _points;
+    protected bool _complete;
 
     //Constructor
     public Goal(string name, string description, int points)
@@ -17,11 +18,15 @@ public abstract class Goal
         _goalName = name;
         _description = description;
         _points = points;
+        _complete = false;
     }
 
     //Methods
     public abstract void RecordEvent();
-    public abstract bool IsComplete();
+    public bool IsComplete()
+    {
+        return _complete;
+    }
     public abstract string GetDetails();
     //public abstract string GetStringRepresentation();
 
