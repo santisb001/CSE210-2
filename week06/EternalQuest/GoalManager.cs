@@ -18,5 +18,19 @@ public class GoalManager
     }
 
     //Methods
-    
+    public void Start()
+    {
+        //Run the program
+    }
+    public void DisplayPlayerInfo()
+    {
+        //score and stuff I think
+    }
+    public void ListGoals()
+    {
+        foreach(Goal G in _goals)
+        {
+            G.GetDetails();
+        }
+    }
 }
