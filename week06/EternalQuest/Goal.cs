@@ -28,6 +28,6 @@ public abstract class Goal
         return _complete;
     }
     public abstract string GetDetails();
-    //public abstract string GetStringRepresentation();
+    public abstract string GetStringRepresentation();
 
 }
